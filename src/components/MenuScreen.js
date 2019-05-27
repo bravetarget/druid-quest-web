@@ -1,4 +1,6 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
+
+import backgroundImage from '../assets/ForestBG.jpg';
 
 
 
@@ -11,11 +13,11 @@ export default function MenuScreen(props) {
  
     return (
       <div className="menuScreenContainer" style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <img src='../assets/ForestBG.jpg' style={styles.bg} alt=''></img>
+        <img src={backgroundImage} style={styles.bg} alt=''></img>
           <button
-          title="Start"
-          onPress={() => props.navigation.navigate('Game')}
-        />
+            title="Start"
+            onPress={() => props.navigation.navigate('Game')}
+          />
         <button onClick={switchChange} value={switchValue} />
         <div>{switchValue ? 'Music On' : 'Music Off'}</div>
         <button
