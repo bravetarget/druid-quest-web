@@ -1,12 +1,9 @@
-import React from 'react';
-import './App.css';
+import React from 'react'; 
 
-function App() {
-  return (
-    <div className="App">
-      ***INSERT DRUID QUEST APP HERE***
-    </div>
-  );
+import MenuScreen from './components/MenuScreen';
+import GameScreen from './components/GameScreen';
+import LeaderBoardScreen from './components/LeaderBoardScreen';
+
+export default function App() {
+  return <div><MenuScreen /></div>;
 }
-
-export default App;
