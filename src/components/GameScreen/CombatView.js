@@ -15,7 +15,7 @@ export default function Combatdiv({ character }) {
   useEffect(() => {
     const { level } = character;
 
-    const monsterCount = level * 2;
+    let monsterCount = level * 2;
     if (monsterCount > MAX_MONSTER_COUNT) monsterCount = MAX_MONSTER_COUNT;
 
     const monsters = [];

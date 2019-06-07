@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import backgroundImage from '../assets/ForestBG.jpg';
+import { NavLink,Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -12,19 +14,32 @@ export default function MenuScreen(props) {
   }
  
     return (
+      
       <div className="menuScreenContainer" style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <img src={backgroundImage} style={styles.bg} alt=''></img>
-          <button
-            title="Start"
-            onPress={() => props.navigation.navigate('Game')}
-          />
-        <button onClick={switchChange} value={switchValue} />
-        <div>{switchValue ? 'Music On' : 'Music Off'}</div>
-        <button
-          title="Leader Board"
-          onPress={() => props.navigation.navigate('LeaderBoard')}
-        />
-      </div>
+        <Button style={{display: 'block', height: '100%'}}>
+             <p>Start</p>
+         <NavLink to="/GameScreen"></NavLink>
+        </Button>
+
+        <Link to="/GameScreen">
+          <Button style={{display: 'block', height: '100%'}}>GameScreen</Button>
+        </Link>
+          
+        <Button style={{display: 'block' , height: '100%'}} 
+                tag={Link} to="/LeaderBoardScreen">Leaderboard
+        </Button>
+         
+        <NavLink to="LeaderBoardScreen">
+          <Button style={{display: 'block', height: '100%'}}>
+             <p>Leaderboard</p>
+          </Button>
+        </NavLink>
+          
+          <img src={backgroundImage} style={styles.bg} alt=''></img>
+ 
+       </div>
+        //<div>{switchValue ? 'Music On' : 'Music Off'}</div>
+      
     );
 }
   
