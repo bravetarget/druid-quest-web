@@ -1,18 +1,17 @@
 
-export default function Monster(props) {
-  function constructor(stats, name = 'Corrupt Animal'){
-        props.stats = stats;
-        props.name = name;
-       props.isCorrupt = true;
-  }
+export default function Monster() {
+    const {stats, name} = 'Corrupt Animal'; 
+    let isCorrupt = true;
+    
 
-    function takeDamage(dmg){
-        let { hitpoints } = props.stats;
+    function takeDamage(dmg) {
+        const { hitpoints } = stats;
         hitpoints -= dmg;
 
         if (hitpoints <= 0) {
-            props.isCorrupt = false;
+            isCorrupt = false;
         }
-    }
+
         return hitpoints;
+    }
 }
