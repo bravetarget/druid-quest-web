@@ -1,19 +1,18 @@
 
-export default class Monster {
-    constructor(stats, name = 'Corrupt Animal') {
-        this.stats = stats;
-        this.name = name;
-        this.isCorrupt = true;
-    }
+export default function Monster(props) {
+  function constructor(stats, name = 'Corrupt Animal'){
+        props.stats = stats;
+        props.name = name;
+       props.isCorrupt = true;
+  }
 
-    takeDamage(dmg) {
-        let { hitpoints } = this.stats;
+    function takeDamage(dmg){
+        let { hitpoints } = props.stats;
         hitpoints -= dmg;
 
         if (hitpoints <= 0) {
-            this.isCorrupt = false;
+            props.isCorrupt = false;
         }
-
-        return hitpoints;
     }
+        return hitpoints;
 }
